@@ -1,7 +1,17 @@
-﻿// Learn more about F# at http://fsharp.org
-// See the 'F# Tutorial' project for more help.
+﻿
+
+let printTitles titles = 
+    titles
+    |> List.iter (fun t -> 
+        let text, score = t
+        printfn "(%d) %s" score text)
+    printfn "---"
+
 
 [<EntryPoint>]
 let main argv = 
-    printfn "%A" argv
+    Reddit.GetTopProgrammingTitles() |> printTitles
+    Reddit.GetNewProgrammingTitles() |> printTitles
+
+    System.Console.ReadKey() |> ignore
     0 // return an integer exit code
