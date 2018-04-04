@@ -23,6 +23,7 @@ let GetNewProgrammingTitles _ =
 
 let programmingSubreddits = 
     [
+        "programming";
         "python"; //210k users
         "javascript"; //190k users
         "java"; //80.3k users
@@ -52,18 +53,18 @@ let programmingSubreddits =
         "asm"; //4.6k users
         "scheme"; //4.5k users
         "fsharp"; //4.2k users
-        "ocaml"; //4.0k users
-        "julia"; //3.8k users
-        "mathematica"; //3.7k users
-        "visualbasic"; //3.6k users
-        "racket"; //2.8k users
-        "coffeescript"; //2.4k users
-        "dartlang"; //2.3k users
-        "d_language"; //2.1k users
-        "gpgpu"; //2.0k users
-        "shell"; //2.0k users
-        "groovy"; //1.8k users
-        "prolog"; //1.8k users
-        "fortran"; //1.6k users
+        //"ocaml"; //4.0k users
+        //"julia"; //3.8k users
+        //"mathematica"; //3.7k users
+        //"visualbasic"; //3.6k users
+        //"racket"; //2.8k users
+        //"coffeescript"; //2.4k users
+        //"dartlang"; //2.3k users
+        //"d_language"; //2.1k users
+        //"gpgpu"; //2.0k users
+        //"shell"; //2.0k users
+        //"groovy"; //1.8k users
+        //"prolog"; //1.8k users
+        //"fortran"; //1.6k users
     ]
 
