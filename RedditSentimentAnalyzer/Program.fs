@@ -38,6 +38,12 @@ let printNegativeTitles redditSentimentData =
     |> List.sortBy (fun item -> item.Sentiment)
     |> List.iter (fun item -> printfn "(%d) - (%f) %s" item.Votes item.Sentiment.Value item.Title )
 
+let printNegativeAndPositiveTitles redditSentimentData =
+    redditSentimentData 
+    |> List.where(fun item -> (item.Sentiment.Value < 0.3 || item.Sentiment.Value > 0.7))
+    |> List.sortBy (fun item -> item.Sentiment)
+    |> List.iter (fun item -> printfn "(%d) - (%f) %s" item.Votes item.Sentiment.Value item.Title )
+
 let printNegativeTitlesForLanguageSubreddits _ =
     Reddit.programmingSubreddits
     |> List.iter (fun subreddit ->
@@ -54,11 +60,12 @@ let main argv =
 
     //let redditSentimentData = getSentimentAndTitlesForsubreddit "programming" "top"
     //let redditSentimentData = getSentimentAndTitlesForsubreddit "programming" "new"
-    //let redditSentimentData = getSentimentAndTitlesForsubreddit "programming" "new"
+    let redditSentimentData = getSentimentAndTitlesForsubreddit "programming" "controversial"
 
     //printNegativeTitles redditSentimentData
+    printNegativeAndPositiveTitles redditSentimentData
 
-    printNegativeTitlesForLanguageSubreddits()
+    //printNegativeTitlesForLanguageSubreddits()
 
 
     System.Console.ReadKey() |> ignore
